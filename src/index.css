@@ -1,0 +1,502 @@
+body {
+  height: 97vh;
+  background-color: black;
+  background-image: url(../public/Color-Splash-Wallpapers-1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.appFather {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.first-part {
+  padding: 20px;
+  box-sizing: border-box;
+  /* overflow-y: scroll; */
+  overflow-y: hidden;
+  margin-top: 40px;
+  width: 600px;
+  height: 80vh;
+  border-radius: 20px;
+  background-color: rgba(255, 254, 254, 0.147);
+  backdrop-filter: blur(5px);
+  border: 1.5px solid white;
+}
+.Navecation {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo p span {
+  background-color: rgba(255, 254, 254, 0.147);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  padding: 5px;
+  margin-left: 2px;
+}
+.logo p {
+  position: relative;
+}
+.logo p::after {
+  content: "";
+  position: absolute;
+  background-color: #ffd700;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  left: 20px;
+  top: 1px;
+}
+.search {
+  width: 180px;
+  height: 30px;
+  background-color: rebeccapurple;
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  padding: 0 10px;
+}
+.searchInput {
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: transparent;
+  width: 120px;
+  color: wheat;
+}
+.searchInput::placeholder {
+  color: wheat;
+}
+.faSearch {
+  color: wheat;
+}
+.searchInput:focus {
+  outline: none;
+}
+
+.WatchList {
+  display: flex;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  gap: 10px;
+  align-items: center;
+  height: 20px;
+  padding: 2px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ////// */
+
+.AnimeTop {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow-y: hidden;
+  gap: 0px;
+  height: 120px;
+  width: 100%;
+  background-color: transparent;
+  transition: all 0.5s;
+  z-index: 150;
+}
+.AnimeTop2 {
+  margin-top: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  gap: 10px;
+  height: 300px;
+  width: 100%;
+  background-color: transparent;
+  z-index: 150;
+  padding: 10px;
+  transition: all 0.5s;
+}
+.Fanime {
+  position: relative;
+  margin-top: 30px;
+  height: 120px;
+}
+.Fanime > p:first-child {
+  position: absolute;
+  top: -35px;
+  left: 0;
+  color: white;
+  font-size: small;
+}
+.Fanime > p:nth-child(2) {
+  cursor: pointer;
+  position: absolute;
+  top: -35px;
+  right: 20px;
+  color: white;
+  font-size: small;
+}
+.Animes {
+  position: relative;
+  overflow: hidden;
+  height: 120px;
+  width: 100px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  cursor: pointer;
+}
+.Animes img {
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.Animes .block {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.715);
+  backdrop-filter: blur(5px);
+  width: 101%;
+  height: 40px;
+}
+.Animes > span {
+  background-color: rgb(255, 200, 0);
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 8px;
+  font-weight: 900;
+  padding: 2px;
+  border-radius: 5px;
+
+  z-index: 5;
+}
+.Animes .block h3 {
+  margin-top: 15px;
+  transform: translateY(-10px);
+  font-size: 8px;
+  line-height: 1;
+  margin-left: 10px;
+  margin-right: 5px;
+  height: 20px;
+}
+.Animes .block p {
+  font-size: 7px;
+  transform: translateY(-20px);
+  display: flex;
+  gap: 3px;
+  color: rgb(0, 213, 255);
+  position: absolute;
+  left: 10px;
+  bottom: -25px;
+}
+.second-part {
+  overflow: hidden;
+  margin-top: 40px;
+  width: 300px;
+  height: 80vh;
+  border-radius: 20px;
+  background-color: rgba(255, 254, 254, 0.147);
+  backdrop-filter: blur(5px);
+  border: 1.5px solid white;
+}
+.Details {
+  margin-top: -20px;
+  height: 200px;
+  width: 100%;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.137);
+  backdrop-filter: blur(5px);
+}
+.Details > p {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.Details img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 100%;
+}
+.Details .text {
+  font-size: smaller;
+  position: absolute;
+  right: 20px;
+  color: white;
+  margin-top: 10px;
+  width: 150px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.Details .text h2 {
+  font-size: 15px;
+}
+.Please-select {
+  color: white;
+  font-size: larger;
+  text-align: center;
+}
+.Lod {
+  color: white;
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  animation: lod 1s infinite linear;
+}
+@keyframes lod {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.WatchListBody {
+  position: absolute;
+  color: white;
+  box-sizing: border-box;
+  top: 120px;
+  right: 400px;
+  width: 300px;
+  height: 300px;
+  background-color: #2b3035;
+  z-index: 200;
+  border: 1px solid black;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: scroll;
+}
+
+.Anime {
+  display: flex;
+  gap: 20px;
+  height: 65px;
+  position: relative;
+  box-sizing: border-box;
+}
+.Anime::before {
+  position: absolute;
+  content: "";
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #666;
+}
+.Anime img {
+  width: 40px;
+  height: 50px;
+}
+.Anime .text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 10px;
+  gap: 5px;
+  box-sizing: border-box;
+}
+.Anime .text p:nth-child(1) {
+  margin-top: 5px;
+}
+.Anime .text p:nth-child(2) {
+  margin-top: -15px;
+  font-size: small;
+  display: flex;
+  gap: 25px;
+}
+.faArrowAltCircleLeft {
+  position: absolute;
+  z-index: 15;
+  bottom: -50px;
+  left: 50px;
+}
+.faArrowAltCircleRight {
+  position: absolute;
+  z-index: 15;
+  bottom: -50px;
+  right: 50px;
+}
+.AddToWatchList button {
+  border: none;
+  background-color: #ffd700;
+  cursor: pointer;
+  font-size: larger;
+  border-radius: 20px;
+  padding: 5px;
+  width: 200px;
+  font-weight: 700;
+  color: white;
+}
+.AddToWatchList button:focus {
+  outline: none;
+}
+.close {
+  cursor: pointer;
+  position: absolute;
+  right: -10px;
+  color: yellow;
+  background-color: #1b4167;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+}
+.faArrowRight {
+  position: absolute;
+  z-index: 99;
+  left: 10px;
+  top: 5px;
+  color: yellow;
+  cursor: pointer;
+  font-weight: 800;
+}
+.SearchPage {
+  position: absolute;
+  width: 400px;
+  height: 60vh;
+  background-color: #2b3035;
+  z-index: 1000;
+  overflow-y: scroll;
+}
+.SearchPageClose {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: white;
+  cursor: pointer;
+}
+.AnimeBlock {
+  cursor: pointer;
+  font-size: larger;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 80%;
+  position: relative;
+  height: 100px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: white;
+  border: 1px #aaa solid;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+.AnimeBlock::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #aaaaaa1b;
+  opacity: 0;
+  transition: 0.5s;
+}
+.AnimeBlock:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+}
+
+.AnimeBlock span {
+  color: #ffd700;
+  font-size: small;
+}
+.AnimeBlock img {
+  height: 60px;
+  width: 40px;
+}
+.RandomAnime {
+  margin-left: 10%;
+  position: relative;
+  width: 80%;
+  height: 180px;
+  background-color: transparent;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  overflow: hidden;
+}
+.RandomAnime > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.RandomAnime .text {
+  position: absolute;
+  width: 101%;
+  bottom: 0px;
+  left: 0;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.766);
+  backdrop-filter: blur(5px);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0px 10px;
+}
+.RandomAnime button {
+  position: absolute;
+  right: 20px;
+}
+.RandomAnime .info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.RandomAnime .p1 {
+  margin-bottom: -10px;
+  font-size: small;
+  color: white;
+  font-weight: 600;
+}
+.RandomAnime .p1 span {
+  color: black;
+  background-color: #ffd700;
+  font-size: 10px;
+  padding: 3px;
+  border-radius: 5px;
+}
+.RandomAnime .p2 {
+  margin-bottom: 10px;
+  font-size: smaller;
+  color: #a5a5a5;
+}
+.buttonR {
+  border: none;
+  background-color: transparent;
+  color: #1b4167;
+  cursor: pointer;
+  padding: 2.5px 5px;
+  border-radius: 5px 10px;
+  border: #1b4167 2px solid;
+}
+.buttonR:focus {
+  outline: none;
+}
