@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+الآن بعد إضافة `AnimeContextType` لتمثيل هيكل البيانات الذي يتم تمريره عبر `AnimeContext`، فإنه من المهم توضيح كيف تساهم هذه الأنواع (types) في تحسين جودة الكود من خلال **TypeScript**.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+لنقم بتعديل README لتوضيح استخدام `AnimeContextType` بوضوح، وندرج جزءًا من الكود الذي يوضح كيف يتم استخدامه في المشروع بشكل قوي.
 
-## Available Scripts
+### تحديث README مع `AnimeContextType`:
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Key TypeScript Features:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **`AnimeContextType`** - Strong Typing for Context:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **AnimeContextType**: هذا النوع يُستخدم لتعريف هيكل البيانات داخل `AnimeContext`. يتم ضمان أن كل خاصية في السياق تحتوي على نوع دقيق، مما يساعد على منع الأخطاء أثناء التطوير ويضمن التعامل الصحيح مع البيانات داخل التطبيق.
 
-### `npm test`
+`interface AnimeContextType {
+isLod: boolean;
+obj: AnimeType[];
+natFound: boolean;
+nameAnime: AnimeType[] | null;
+isLod2: boolean;
+anime: AnimeType | null;
+watched: AnimeType[];
+searchAnime: string;
+isC: boolean;
+isR: boolean;
+setIsC: React.Dispatch<React.SetStateAction<boolean>>;
+setIsR: React.Dispatch<React.SetStateAction<boolean>>;
+setSearchAnime: React.Dispatch<React.SetStateAction<string>>;
+handleDetails: (anime: AnimeType) => void;
+handleAddWatched: (anime: AnimeType) => void;
+handleRemoveWatched: (anime: AnimeType) => void;
+animeTopApi: AnimeType[];
+}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+````
 
-### `npm run build`
+- **Type Safety in Context**: باستخدام `AnimeContextType`، نضمن أن كل قيمة يتم تمريرها عبر `AnimeContext` تتبع هيكل البيانات المحدد، مما يقلل من إمكانية حدوث الأخطاء بسبب البيانات غير المتوافقة أو غير المتوقعة.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Custom Hooks & Context with Strong Types**:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```typescript
+const AnimeContext = createContext<AnimeContextType | undefined>(undefined);
+````
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- هذا يضمن أن جميع القيم التي يتم تمريرها من خلال `AnimeContext` تتبع النوع المعلن في `AnimeContextType`. يتم توفير هذا السياق عبر `AnimeProvider` وهو يحتوي على كافة الوظائف والحالات الخاصة بالتطبيق.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Why `AnimeContextType` Makes a Difference:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Explicit Types for State Variables**: مع TypeScript، يمكنك تحديد أنواع كل حالة (`useState`), مثل `anime`, `watched`, و `searchAnime`. على سبيل المثال:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```typescript
+const [anime, setAnime] = useState<AnimeType | null>(null);
+const [watched, setWatched] = useState<AnimeType[]>([]);
+const [searchAnime, setSearchAnime] = useState<string>("");
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Ensuring Consistent Data**: كل البيانات التي يتم التعامل معها في `AnimeContext` تتبع الأنواع المحددة في `AnimeContextType`، مما يضمن التناسق والموثوقية عبر جميع الأجزاء في التطبيق.
 
-## Learn More
+- **Error Prevention**: عند محاولة استخدام أي من البيانات في السياق مع نوع غير متوافق، سيعطيك TypeScript خطأ، مما يساعدك في اكتشاف الأخطاء قبل أن تصل إلى بيئة الإنتاج.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Code Snippets:
 
-### Code Splitting
+### Example: Providing Context with `AnimeContextType`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```typescript
+<AnimeContext.Provider
+  value={{
+    isLod,
+    obj,
+    natFound,
+    nameAnime,
+    isLod2,
+    anime,
+    watched,
+    searchAnime,
+    isC,
+    isR,
+    setIsC,
+    setIsR,
+    handleRemoveWatched,
+    handleAddWatched,
+    handleDetails,
+    setSearchAnime,
+    animeTopApi,
+  }}
+>
+  {children}
+</AnimeContext.Provider>
+```
 
-### Analyzing the Bundle Size
+- **TypeScript ensures that each property here matches the expected type defined in `AnimeContextType`.**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
