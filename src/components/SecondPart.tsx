@@ -1,4 +1,6 @@
-import Details from "./Details";
+import React from "react";
+
+import Details from "./Details.tsx";
 
 function SecondPart() {
   return (

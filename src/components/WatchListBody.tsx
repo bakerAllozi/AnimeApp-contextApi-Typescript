@@ -1,13 +1,14 @@
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Anime from "./Anime";
-import { usePosts } from "../AnimeContext";
+import Anime from "./Anime.tsx";
+import { usePosts } from "../AnimeContext.tsx";
+import React from "react";
 
 function WatchListBody() {
   const { watched, isC, setIsC } = usePosts();
 
   return (
-    <div>
+    <div style={{ color: "white" }}>
       {isC && (
         <div className="WatchListBody">
           <FontAwesomeIcon

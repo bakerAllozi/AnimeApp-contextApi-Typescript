@@ -1,6 +1,7 @@
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { usePosts } from "../AnimeContext";
+import { usePosts } from "../AnimeContext.tsx";
+import React from "react";
 
 function WatchList() {
   const { setIsC } = usePosts();

@@ -1,6 +1,8 @@
-import Logo from "./Logo";
-import Search from "./Search";
-import WatchList from "./WatchList";
+import React from "react";
+
+import Logo from "./Logo.tsx";
+import Search from "./Search.tsx";
+import WatchList from "./WatchList.tsx";
 export default function Navecation() {
   return (
     <div className="Navecation">

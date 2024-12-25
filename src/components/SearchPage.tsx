@@ -1,13 +1,16 @@
+import React from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import AnimeBlock from "./AnimeBlock";
+import AnimeBlock from "./AnimeBlock.tsx";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
-import Err from "./Err";
-import Loading from "./loading";
-import { usePosts } from "../AnimeContext";
+import Err from "./Err.tsx";
+import Loading from "./loading.tsx";
+import { usePosts } from "../AnimeContext.tsx";
+import { AnimeType } from "../types.ts";
 
 function SearchPage() {
   const { setIsR, nameAnime, searchAnime, natFound, isLod2 } = usePosts();
-
+  const nameAnimes = nameAnime as AnimeType[];
   return (
     <div className="SearchPage">
       <FontAwesomeIcon
@@ -30,7 +33,7 @@ function SearchPage() {
           )}
           {searchAnime.length > 2 &&
             !natFound &&
-            nameAnime.Search.map((data) => (
+            nameAnimes.map((data: AnimeType) => (
               <AnimeBlock dataSearch={data} key={data.imdbID} />
             ))}
         </>

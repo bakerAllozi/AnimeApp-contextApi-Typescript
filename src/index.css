@@ -215,7 +215,7 @@ body {
 }
 .Details {
   margin-top: -20px;
-  height: 200px;
+  height: 250px;
   width: 100%;
   position: relative;
   background-color: rgba(255, 255, 255, 0.137);
@@ -236,7 +236,7 @@ body {
 .Details .text {
   font-size: smaller;
   position: absolute;
-  right: 20px;
+  right: 0px;
   color: white;
   margin-top: 10px;
   width: 150px;

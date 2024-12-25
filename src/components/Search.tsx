@@ -1,14 +1,17 @@
+import React from "react";
+
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { usePosts } from "../AnimeContext";
+import { usePosts } from "../AnimeContext.tsx";
 
 function Search() {
   const { setSearchAnime, searchAnime, setIsR } = usePosts();
 
-  function handelOnChange(e) {
+  function handelOnChange(e: React.ChangeEvent<HTMLInputElement>): void {
     setIsR(true);
     setSearchAnime(e.target.value);
   }
+
   return (
     <div className="search">
       <input

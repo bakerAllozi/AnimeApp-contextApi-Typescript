@@ -1,8 +1,9 @@
-import { usePosts } from "../AnimeContext";
-import Navecation from "./Navecation";
-import SearchPage from "./SearchPage";
-import AnimeTop from "./animeTop";
-import RandomAnime from "./randomAnime";
+import React from "react";
+import { usePosts } from "../AnimeContext.tsx";
+import Navecation from "./Navecation.tsx";
+import SearchPage from "./SearchPage.tsx";
+import AnimeTop from "./animeTop.tsx";
+import RandomAnime from "./randomAnime.tsx";
 
 function FirstPart() {
   const { searchAnime, isR } = usePosts();
@@ -16,7 +17,7 @@ function FirstPart() {
         ) : (
           <>
             <RandomAnime />
-
+            <AnimeTop />
             <AnimeTop />
           </>
         )}
